@@ -1,826 +1,875 @@
-\documentclass[10pt]{article}
+  \documentclass[10pt]{article}
 
-% This is a helpful package that puts math inside length specifications
-\usepackage{calc}
+  % This is a helpful package that puts math inside length specifications
+  \usepackage{calc}
 
-% Layout: Puts the section titles on left side of page
-\reversemarginpar
+  % Layout: Puts the section titles on left side of page
+  \reversemarginpar
 
-%
-%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
-%
-% The next \usepackage line changes the layout for CV style section
-% headings as marginal notes. It also sets up the paper size as either
-% letter or A4. By default, letter was used. If A4 paper is desired,
-% comment out the letterpaper lines and uncomment the a4paper lines.
-%
-% As you can see, the margin widths and section title widths can be
-% easily adjusted.
-%
-% ALSO: Notice that the includefoot option can be commented OUT in order
-% to put the PAGE NUMBER *IN* the bottom margin. This will make the
-% effective text area larger.
-%
-% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
-% see the note about the +LP and -LP lines below. Comment out the +LP
-% and uncomment the -LP.
-%
-% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
-% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
-% below.
-%
+  %
+  %         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+  %
+  % The next \usepackage line changes the layout for CV style section
+  % headings as marginal notes. It also sets up the paper size as either
+  % letter or A4. By default, letter was used. If A4 paper is desired,
+  % comment out the letterpaper lines and uncomment the a4paper lines.
+  %
+  % As you can see, the margin widths and section title widths can be
+  % easily adjusted.
+  %
+  % ALSO: Notice that the includefoot option can be commented OUT in order
+  % to put the PAGE NUMBER *IN* the bottom margin. This will make the
+  % effective text area larger.
+  %
+  % IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+  % see the note about the +LP and -LP lines below. Comment out the +LP
+  % and uncomment the -LP.
+  %
+  % IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+  % is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+  % below.
+  %
 
-%% Use these lines for letter-sized paper
-\usepackage[paper=letterpaper,
-            %includefoot, % Uncomment to put page number above margin
-            %marginparwidth=1.2in,     % Length of section titles
-            %marginparsep=.05in,       % Space between titles and text
-            margin=1in,
-            hmargin={.5in, 1in},               % 1 inch margins
-            includemp]{geometry}
+  %% Use these lines for letter-sized paper
+  \usepackage[paper=letterpaper,
+              %includefoot, % Uncomment to put page number above margin
+              %marginparwidth=1.2in,     % Length of section titles
+              %marginparsep=.05in,       % Space between titles and text
+              margin=1in,
+              hmargin={.5in, 1in},               % 1 inch margins
+              includemp]{geometry}
 
-%% Use these lines for A4-sized paper
-%\usepackage[paper=a4paper,
-%            %includefoot, % Uncomment to put page number above margin
-%            marginparwidth=30.5mm,    % Length of section titles
-%            marginparsep=1.5mm,       % Space between titles and text
-%            margin=25mm,              % 25mm margins
-%            includemp]{geometry}
+  %% Use these lines for A4-sized paper
+  %\usepackage[paper=a4paper,
+  %            %includefoot, % Uncomment to put page number above margin
+  %            marginparwidth=30.5mm,    % Length of section titles
+  %            marginparsep=1.5mm,       % Space between titles and text
+  %            margin=25mm,              % 25mm margins
+  %            includemp]{geometry}
 
-%% More layout: Get rid of indenting throughout entire document
-\setlength{\parindent}{0in}
+  %% More layout: Get rid of indenting throughout entire document
+  \setlength{\parindent}{0in}
 
-%% This gives us fun enumeration environments. compactenum will be nice.
-\usepackage{paralist}
+  %% This gives us fun enumeration environments. compactenum will be nice.
+  \usepackage{paralist}
 
-%% Reference the last page in the page number
-%
-% NOTE: comment the +LP line and uncomment the -LP line to have page
-%       numbers without the ``of ##'' last page reference)
-%
-% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
-%       numbers (make sure includefoot is commented out above)
-%
-\usepackage{fancyhdr,lastpage}
-\pagestyle{fancy}
-%\pagestyle{empty}      % Uncomment this to get rid of page numbers
-\fancyhf{}
-\fancyhead{}
-\fancyhead[LO,LE]{\large \bf Dr. Franziska B. Hinkelmann} % left, odd, even 
-\fancyheadoffset[L]{1in} % let left header go over margin
-
-
-%\renewcommand{\headrulewidth}{0.1 pt}
-
-\fancyfootoffset{\marginparsep+\marginparwidth}
-\newlength{\footpageshift}
-\setlength{\footpageshift}
-          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
-\lfoot{\hspace{\footpageshift}%
-       \parbox{4in}{\, \hfill %
-                    \arabic{page} of \protect\pageref*{LastPage} % +LP
-%                    \arabic{page}                               % -LP
-                    \hfill \,}}
-
-% Finally, give us PDF bookmarks
-\usepackage{color,hyperref}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=darkblue,
-            anchorcolor=darkblue,citecolor=darkblue}
-
-%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Reference the last page in the page number
+  %
+  % NOTE: comment the +LP line and uncomment the -LP line to have page
+  %       numbers without the ``of ##'' last page reference)
+  %
+  % NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+  %       numbers (make sure includefoot is commented out above)
+  %
+  \usepackage{fancyhdr,lastpage}
+  \pagestyle{fancy}
+  %\pagestyle{empty}      % Uncomment this to get rid of page numbers
+  \fancyhf{}
+  \fancyhead{}
+  \fancyhead[LO,LE]{\large \bf Dr. Franziska B. Hinkelmann} % left, odd, even 
+  \fancyheadoffset[L]{1in} % let left header go over margin
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %\renewcommand{\headrulewidth}{0.1 pt}
 
-% The title (name) with a horizontal rule under it
-%
-% Usage: \makeheading{name}
-%
-% Place at top of document. It should be the first thing.
-\newcommand{\makeheading}[1]%
-        {\hspace*{-\marginparsep minus \marginparwidth}%
-         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-                {\large \bfseries #1}\\[-0.15\baselineskip]%
-                %{\large \bfseries #1}\\[-0.15\baselineskip]%
-                 \rule{\columnwidth}{1pt}%
-         \end{minipage}}
+  \fancyfootoffset{\marginparsep+\marginparwidth}
+  \newlength{\footpageshift}
+  \setlength{\footpageshift}
+            {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+  \lfoot{\hspace{\footpageshift}%
+         \parbox{4in}{\, \hfill %
+                      \arabic{page} of \protect\pageref*{LastPage} % +LP
+  %                    \arabic{page}                               % -LP
+                      \hfill \,}}
 
-% The section headings
-%
-% Usage: \section{section name}
-%
-% Follow this section IMMEDIATELY with the first line of the section
-% text. Do not put whitespace in between. That is, do this:
-%
-%       \section{My Information}
-%       Here is my information.
-%
-% and NOT this:
-%
-%       \section{My Information}
-%
-%       Here is my information.
-%
-% Otherwise the top of the section header will not line up with the top
-% of the section. Of course, using a single comment character (%) on
-% empty lines allows for the function of the first example with the
-% readability of the second example.
-\renewcommand{\section}[2]%
-        {\pagebreak[2]\vspace{1.3\baselineskip}%
-         \phantomsection\addcontentsline{toc}{section}{#1}%
-         \hspace{-.05in}%
-	\marginpar{\raggedright \scshape #1} #2}
-%         { \marginpar
-%         \raggedright \scshape #1}#2}
-%{\large \scshape #1 } } #2}
-%{\raggedright \large \scshape #1 } \nolinebreak } #2}
+  % Finally, give us PDF bookmarks
+  \usepackage{color,hyperref}
+  \definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+  \hypersetup{colorlinks,breaklinks,
+              linkcolor=darkblue,urlcolor=darkblue,
+              anchorcolor=darkblue,citecolor=darkblue}
 
-% An itemize-style list with lots of space between items
-\newenvironment{outerlist}[1][\enskip\textbullet]%
-        {\begin{enumerate}[#1]}{\end{enumerate}%
-         \vspace{-.6\baselineskip}}
-
-% An itemize-style list with little space between items
-\newenvironment{innerlist}[1][\enskip\textbullet]%
-        {\begin{compactenum}[#1]}{\end{compactenum}}
-
-%\newenvironment{tabularr}[1][\enskip]%
-\newenvironment{tabularr}[1]%
-	{\begin{tabular}{ p{.7in}p{\textwidth -1.5in}}#1}{\end{tabular}}
-
-% To add some paragraph space between lines.
-% This also tells LaTeX to preferably break a page on one of these gaps
-% if there is a needed pagebreak nearby.
-\newcommand{\blankline}{\quad\pagebreak[2]}
-
-%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
-%\makeheading{Dr. Franziska B. Hinkelmann}
-%
-% NOTE: Mind where the & separators and \\ breaks are in the following
-%       table.
-%
-% ALSO: \rcollength is the width of the right column of the table 
-%       (adjust it to your liking; default is 1.85in).
-%
-\newlength{\rcollength}\setlength{\rcollength}{2.5in}%
-%
-\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
-Software Consultant & 
-	\href{mailto:franziska.hinkelmann@gmail.com}{franziska.hinkelmann@gmail.com}\\
-%TNG Technology Consulting GmbH & 
-%	\\%\textit{Phone:} (540) 257-3992\\
-%Beta-Str. 13a 
-Munich, Germany
-& 
-%85774 Unterf\"ohring, Germany 
-
-	{\it Twitter:} \href{https://twitter.com/fhinkel}{@fhinkel}
-	%\href{http://people.mbi.ohio-state.edu/hinkelmann.1/}{people.mbi.ohio-state.edu/hinkelmann.1/}\\
-\end{tabular}\\
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-
-%-----------------------------------
-\section{} 
-\textbf{TNG Technology Consulting GmbH, Unterf\"ohring, Germany}
-\begin{outerlist}
-	\item[]
-	{\bf Software Consultant}, since September 2013
-	\\
-\end{outerlist}
+  %%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\textbf{Universit\"at Bremen, Bremen, Germany}
-\begin{outerlist}
-	\item[]
-	{\bf Lecturer}, August 2014\\
- \href{http://www.informatica-feminale.de/en/summer2014/lib/ajax/course_eng.php?courseId=533}{Agile Software Development: A Node.js application in one week}	\\
-\end{outerlist}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{Mathematical Biosciences Institute, Ohio
-State University, OH}
-\begin{outerlist}
-	\item[]
-	{\bf Postdoctoral Fellow}, 2011-2014\\
-	Mentor: Michael Stillman, Cornell University
-	\\
-\end{outerlist}
-%
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
+  % The title (name) with a horizontal rule under it
+  %
+  % Usage: \makeheading{name}
+  %
+  % Place at top of document. It should be the first thing.
+  \newcommand{\makeheading}[1]%
+          {\hspace*{-\marginparsep minus \marginparwidth}%
+           \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                  {\large \bfseries #1}\\[-0.15\baselineskip]%
+                  %{\large \bfseries #1}\\[-0.15\baselineskip]%
+                   \rule{\columnwidth}{1pt}%
+           \end{minipage}}
 
-%-----------------------------------
-\section{Education}
-%
-\textbf{Virginia Tech, Blacksburg, VA}
-\begin{outerlist}
-\item[] 
-	{\bf Ph.D. Mathematics}, August 2011\\
-	Reinhard Laubenbacher (Virginia Bioinformatics Institute), Advisor\\
-	{\it Algebraic theory for discrete models in systems biology}
-	%Terry Herdman, Abdul Jarrah, John Burns, committee members
-\item[] 
-	{\bf M.S. Mathematics}, May 2007\\
-	%Master's Presentation: \textit{Heat Transfer in a Layered Longeron}\\
-	%Terry Herdman (Interdisciplinary Center for Applied Mathematics), Advisor\\
- 	%John Burns, Gene Cliff, Ed Green, committee members
-\end{outerlist}
+  % The section headings
+  %
+  % Usage: \section{section name}
+  %
+  % Follow this section IMMEDIATELY with the first line of the section
+  % text. Do not put whitespace in between. That is, do this:
+  %
+  %       \section{My Information}
+  %       Here is my information.
+  %
+  % and NOT this:
+  %
+  %       \section{My Information}
+  %
+  %       Here is my information.
+  %
+  % Otherwise the top of the section header will not line up with the top
+  % of the section. Of course, using a single comment character (%) on
+  % empty lines allows for the function of the first example with the
+  % readability of the second example.
+  \renewcommand{\section}[2]%
+          {\pagebreak[2]\vspace{1.3\baselineskip}%
+           \phantomsection\addcontentsline{toc}{section}{#1}%
+           \hspace{-.05in}%
+  	\marginpar{\raggedright \scshape #1} #2}
+  %         { \marginpar
+  %         \raggedright \scshape #1}#2}
+  %{\large \scshape #1 } } #2}
+  %{\raggedright \large \scshape #1 } \nolinebreak } #2}
 
-\textbf{Universit\"at Karlsruhe, Karlsruhe, Germany}
-\begin{outerlist}
-\item[]
-	{\bf Vordiplom Mathematik}, minor {\bf Computer Science}, May 2006
-%\item[] 
-%	Studium Informationswirtschaft (computer
-%	science, economics, law), 2002 - 2004
-\\
-\end{outerlist}
-%\blankline
-%
-%\textbf{Markgrafen Gymnasium Karlsruhe, Karlsruhe, Germany}
-%\begin{outerlist}
-%\item[]
-%  Abitur 2002
-%\end{outerlist}
-%
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
+  % An itemize-style list with lots of space between items
+  \newenvironment{outerlist}[1][\enskip\textbullet]%
+          {\begin{enumerate}[#1]}{\end{enumerate}%
+           \vspace{-.6\baselineskip}}
 
-%-----------------------------------
-\section{Research Grants}
-%
-Collaborator on \href{http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1146819&WT.z_pims_id=5444}{NSF Award \#1146819} \textit{Collaborative Research: ABI Innovation: PlantSimLab: A Simulation Laboratory for Plant Biology}\\
+  % An itemize-style list with little space between items
+  \newenvironment{innerlist}[1][\enskip\textbullet]%
+          {\begin{compactenum}[#1]}{\end{compactenum}}
 
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
+  %\newenvironment{tabularr}[1][\enskip]%
+  \newenvironment{tabularr}[1]%
+  	{\begin{tabular}{ p{.7in}p{\textwidth -1.5in}}#1}{\end{tabular}}
 
-%-----------------------------------
-\section{Publications}
-%
-\textit{Steady state analysis of Boolean molecular
-network models via model reduction and
-computational algebra}, A. Veliz-Cuba, B. Aguilar, {\bf F. Hinkelmann}, R. Laubenbacher, 
-BMC Bioinformatics, 2014, \href{http://www.biomedcentral.com/1471-2105/12/295}{DOI: 10.1186/1471-2105-15-221}\\
+  % To add some paragraph space between lines.
+  % This also tells LaTeX to preferably break a page on one of these gaps
+  % if there is a needed pagebreak nearby.
+  \newcommand{\blankline}{\quad\pagebreak[2]}
 
-\textit{Downregulation of LRP6 inhibits growth of melanoma cells}, {\bf F.
-  Hinkelmann}, B. Delidow, R. Laubenbacher, 2012, under review\\
+  %%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textit{Inferring Biologically Relevant Models: Nested Canalyzing Functions},
-{\bf F. Hinkelmann}, A. Jarrah, ISRN Biomathematics, 2012, \href{http://www.isrn.com/journals/biomathematics/2012/613174/cta/}{DOI: 10.5402/2012/613174}\\
-  
-\textit{ADAM: Analysis of Discrete Models of Biological Systems Using Computer
-Algebra}, {\bf F. Hinkelmann}, M. Brandon, B. Guang, R. McNeill,
-G. Blekherman, A. Veliz-Cuba, R. Laubenbacher, BMC Bioinformatics, 2011, \href{http://dx.doi.org/10.1186/1471-2105-12-295}{DOI: 10.1186/1471-2105-12-295}\\
+  %%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textit{\href{http://arxiv.org/abs/1010.2669}{Fast
-Gr\"obner Basis Computation for Boolean Polynomials}},
-\textbf{F. Hinkelmann}, E. Arnold, 2010, under review\\
-\newpage
-\textit{A Mathematical Framework for Agent Based Models of Complex Biological
- Networks},
-{\bf F. Hinkelmann}, D. Murrugarra, A. Jarrah, R. Laubenbacher,
-Bulletin of Mathematical Biology, 2010,
-\href{http://www.springerlink.com/content/7155270x6j61232w/}{DOI: 10.1007/s11538-010-9582-8}\\
+  \begin{document}
+  %\makeheading{Dr. Franziska B. Hinkelmann}
+  %
+  % NOTE: Mind where the & separators and \\ breaks are in the following
+  %       table.
+  %
+  % ALSO: \rcollength is the width of the right column of the table 
+  %       (adjust it to your liking; default is 1.85in).
+  %
+  \newlength{\rcollength}\setlength{\rcollength}{2.5in}%
+  %
+  \begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+  Software Consultant & 
+  	\href{mailto:franziska.hinkelmann@gmail.com}{franziska.hinkelmann@gmail.com}\\
+  %TNG Technology Consulting GmbH & 
+  %	\\%\textit{Phone:} (540) 257-3992\\
+  %Beta-Str. 13a 
+  Munich, Germany
+  & 
+  %85774 Unterf\"ohring, Germany 
 
-\textit{Parameter estimation for Boolean models of biological networks},
-E. Dimitrova, L. Garc\'ia-Puente, {\bf F. Hinkelmann}, A. Jarrah, R. Laubenbacher, B. Stigler,
-M. Stillman, P. Vera-Licona, Journal of Theoretical Computer Science, April
-2010, \href{http://dx.doi.org/10.1016/j.tcs.2010.04.034}{DOI: 10.1016/j.tcs.2010.04.034}\\
+  	GitHub: \href{https://github.com/fhinkel}{github.com/fhinkel}
+  	%\href{http://people.mbi.ohio-state.edu/hinkelmann.1/}{people.mbi.ohio-state.edu/hinkelmann.1/}\\
+  \end{tabular}\\
 
-\textit{\href{http://arxiv.org/abs/0912.2089}{Boolean Models of Bistable
-Biological Systems}}, {\bf F. Hinkelmann}, R.
-Laubenbacher, Journal of Discrete and Continuous Dynamical
-Systems - Series S (DCDS-S) 4-6 December 2011 special issue on Biomathematics, \href{http://dx.doi.org/10.3934/dcdss.2011.4.1443}{DOI: 10.3934/dcdss.2011.4.1443}\\
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
 
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
+  %-----------------------------------
+  \section{} 
+  \textbf{TNG Technology Consulting GmbH, Unterf\"ohring, Germany}
+  \begin{outerlist}
+  	\item[]
+  	{\bf Software Consultant}, since September 2013
 
-%-----------------------------------
-\section{Book Chapters}
-\textit{Algebraic models and their use in systems biology}, 
-    R. Laubenbacher, {\bf F. Hinkelmann}, D. Murrugarra, A. Veliz-Cuba, Discrete and Topological Models in Molecular Biology, edited by Natasa Jonoska and Masahico Saito, Springer, ISBN: 9783642401923, 2013\\
+    Media and Telecommunication Service Provider:
+    \begin{itemize}
+      \item[] Refactoring frontend and business logic (PHP)
+      \item[] Contributing to rules engine (PHP) based on Rete Algorithm
+      \item[] Conception and development of REST client (PHP)
+      \item[] Coordinating product department, QA, and external agencies for planning and development of monthly releases
+      \item[] Testdriven development with PHPUnit, object oriented programming with PHP 5.3 and PHP 5.5, Composer, Phing, PhpStorm
+      \item[] Setup continuous integration pipeline with Jenkins
+      \item[] Development of acceptance tests in JUnit for product information service (Java)
+      \item[] Contributing to REST service for external partners (Zend Framework)
+    \end{itemize}
+
+    Real Estate Startup:
+      \begin{itemize}
+      \item[] Supervising student trainee
+      \item[] Frontend: Angular, Backend: Node.js and MongoDB
+    \end{itemize}
+
+
+    Co-organizer PHP Usergroup Munich
+    \begin{itemize}
+      \item[] Bimonthly meetings
+      \item[] 380 members
+    \end{itemize}
+
+    Conducting job interviews\\
+
+    \end{outerlist}
+
+  \textbf{Mathematical Biosciences Institute, Ohio
+  State University, OH}
+  \begin{outerlist}
+  	\item[]
+  	{\bf Postdoctoral Fellow}, 2011-2013\\
+  	Mentor: Michael Stillman, Cornell University
+  	\\
+  \end{outerlist}
+  %
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Education}
+  %
+  \textbf{Virginia Tech, Blacksburg, VA}
+  \begin{outerlist}
+  \item[] 
+  	{\bf Ph.D. Mathematics}, August 2011\\
+  	Reinhard Laubenbacher (Virginia Bioinformatics Institute), Advisor\\
+  	{\it Algebraic theory for discrete models in systems biology}
+  	%Terry Herdman, Abdul Jarrah, John Burns, committee members
+  \item[] 
+  	{\bf M.S. Mathematics}, May 2007\\
+  	%Master's Presentation: \textit{Heat Transfer in a Layered Longeron}\\
+  	%Terry Herdman (Interdisciplinary Center for Applied Mathematics), Advisor\\
+   	%John Burns, Gene Cliff, Ed Green, committee members
+  \end{outerlist}
+
+  \textbf{Universit\"at Karlsruhe, Karlsruhe, Germany}
+  \begin{outerlist}
+  \item[]
+  	{\bf Vordiplom Mathematik}, minor {\bf Computer Science}, May 2006
+  %\item[] 
+  %	Studium Informationswirtschaft (computer
+  %	science, economics, law), 2002 - 2004
+  \\
+  \end{outerlist}
+  %\blankline
+  %
+  %\textbf{Markgrafen Gymnasium Karlsruhe, Karlsruhe, Germany}
+  %\begin{outerlist}
+  %\item[]
+  %  Abitur 2002
+  %\end{outerlist}
+  %
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Opensource Contributions}
+  %
+  Main contributor to open source project in Node.js: Web interface for research tool for algebraic geometry, used in courses at Harvard, Cornell, and UC Berkeley, \href{http://web.macaulay2.com}{web.macaulay2.com}\\
+
+  Contributor to Mockery, PHP mock object framework, 2014\\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Publications}
+  %
+  \textit{A Web Application for Macaulay2}, L. Kastner, {\bf F. Hinkelmann}, M. Stillman, 2015,
+  under review\\
+
+  \textit{Steady state analysis of Boolean molecular
+  network models via model reduction and
+  computational algebra}, A. Veliz-Cuba, B. Aguilar, {\bf F. Hinkelmann}, R. Laubenbacher, 
+  BMC Bioinformatics, 2014, \href{http://www.biomedcentral.com/1471-2105/12/295}{DOI: 10.1186/1471-2105-15-221}\\
+  %
+  %\textit{Downregulation of LRP6 inhibits growth of melanoma cells}, {\bf F.
+  %  Hinkelmann}, B. Delidow, R. Laubenbacher, 2012, under review\\
+
+  \textit{Inferring Biologically Relevant Models: Nested Canalyzing Functions},
+  {\bf F. Hinkelmann}, A. Jarrah, ISRN Biomathematics, 2012, \href{http://www.isrn.com/journals/biomathematics/2012/613174/cta/}{DOI: 10.5402/2012/613174}\\
     
-	\textit{Agent-based models and optimal control in biology: an algebraic	approach}, {\bf F. Hinkelmann}, M. Oremland, R. Laubenbacher, Mathematical Concepts and Methods in Modern Biology, Edited by Raina Robeva and Terrell Hodge, Elsevier, ISBN: 9780124157804, 2013\\
-	
-	\textit{Finite Fields in Biology}, {\bf F. Hinkelmann}, R. Laubenbacher, Handbook on Finite Fields, edited by Gary Mullen and Daniel Panario, CRC Press, ISBN: 9781439873786, 2013\\
-
-%\begin{tabular*}{\textwidth}{c}
-%\hline 
-%\end{tabular*}\\
-
-%\textbf{In Preparation}
-%\begin{outerlist}
-%\item[] 
-%	\textit{Bifurcation Theory for Polynomial Dynamical Systems}, {\bf F. Hinkelmann}, R. Laubenbacher, in preparation
-%
-%\item[] 
-%	\textit{Optimal Control for Polynomial Dynamical Systems}, {\bf F. Hinkelmann}, H. Al-Asadi, A. Kumano, L. Ohm, A. Toms, M. %Oremland, R. Laubenbacher, in preparation
-
-%\item[] 
-%	\textit{Computation of Siphons in Petri Nets Using Algebraic Methods}, {\bf F. Hinkelmann}, A. Shiu, M. Heiner, R. %Laubenbacher, in preparation\\
-%%
-%% M2 paper
-%% Primary Decomp paper
-%% Boolean Steady States
-%\end{outerlist}
-
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
-
-%-----------------------------------
-\section{Invited Talks}
-%
-\textbf{The National Alliance for Doctoral Studies in the Mathematical Sciences}, Field of Dreams Conference, November 2, 2012, Tempe, AZ\\
-
-\textbf{MBI (Mathematical Biosciences Institute)}, Plenary Talk, Workshop: Algebraic Methods in Evolutionary and Systems Biology, May 2012, Columbus, OH \\
-
-\textbf{Colorado State University}, Applied Mathematics Seminar, April 4, 2012, Fort Collins, CO\\
-
-\textbf{Virginia Tech, Department of Mathematics}, Colloquium, \textit{Algebraic theory for discrete models in systems biology}, March 16, 2012, Blacksburg, VA \\
-
-\textbf{AWM (Association for Women in Mathematics) Workshop} in conjunction with the Joint Mathematics Meeting, January 7, 2012, Boston, MA\\
-
-\textbf{SACNAS} (Society for Advancing Hispanics/Chicanos and Native Americans
-in Science),  Discrete Systems Biology: Unlocking Nature's Secrets One Step at a Time, October, 2011, San Jose, CA\\
-
-\textbf{Georgia Tech}, Mathematical Biology Seminar, September 21, 2011, Atlanta, GA\\
-
-\textbf{Clemson University}, Algebraic Geometry Seminar, \textit{Parameter
-Estimation for ``biologically relevant" polynomial dynamical systems}, March
-17, 2011, SC\\
-
-\textbf{Duke University}, Algebraic Geometry Seminar, \textit{Analysis of Discrete Models of Biological Systems Using Computer Algebra}, January 26, 2011, Durham, NC \\
-
-\textbf{North Carolina State University}, Symbolic Computation Seminar, \textit{Analysis of Discrete Models of Biological Systems Using Computer Algebra}, 
-December 1, 2010, Raleigh, NC \\
-
-\textbf{Karlsruhe Institute of Technology}, Seminar Institut f\"ur Wissenschaftliches Rechnen und Mathematischer Modellbildung), \textit{Algebraic
-Varieties in Systems Biology}, November 5, 2010, %Karlsruhe, 
-Germany
-\\
-
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
-
-%-----------------------------------
-\section{Workshops Organized}
-%
-\textbf{MBI (Mathematical Biosciences Institute)} Workshop for Young Researchers 
-in Mathematical Biology (WYRMB), organized jointly with R. Leander, September 2012, Columbus, OH\\
+  \textit{ADAM: Analysis of Discrete Models of Biological Systems Using Computer
+  Algebra}, {\bf F. Hinkelmann}, M. Brandon, B. Guang, R. McNeill,
+  G. Blekherman, A. Veliz-Cuba, R. Laubenbacher, BMC Bioinformatics, 2011, \href{http://dx.doi.org/10.1186/1471-2105-12-295}{DOI: 10.1186/1471-2105-12-295}\\
 
-\textbf{Wake Forest University, School of Medicine}
-Workshop together with R. Laubenbacher, 
-\textit{\href{http://admg.vbi.vt.edu/home/Outreach/Workshops/cancer-systems-biology/Worksheet.pdf?attredirects=0&d=1}{Mathematical Modeling in Cancer Biology}}, March 25th, 2011,
-Winston-Salem, NC  \\
+  \textit{\href{http://arxiv.org/abs/1010.2669}{Fast
+  Gr\"obner Basis Computation for Boolean Polynomials}},
+  \textbf{F. Hinkelmann}, E. Arnold, 2010, \href{http://arxiv.org/abs/1010.2669}{arXiv.org}\\
 
-\textbf{Math Institutes Modern Math Workshop} Mini-course together with 
-R. Laubenbacher, 
-\textit{\href{http://admg.vbi.vt.edu/programs-conferences/mathematics-and-the-systems-biology-of-cancer-course-material/SystemsBiology.pdf?attredirects=0&d=1}{Mathematics
-and the Systems Biology of Cancer}}, September 29-30, 2010,
-Anaheim, CA \\
+  \textit{A Mathematical Framework for Agent Based Models of Complex Biological
+   Networks},
+  {\bf F. Hinkelmann}, D. Murrugarra, A. Jarrah, R. Laubenbacher,
+  Bulletin of Mathematical Biology, 2010,
+  \href{http://www.springerlink.com/content/7155270x6j61232w/}{DOI: 10.1007/s11538-010-9582-8}\\
 
+  \textit{Parameter estimation for Boolean models of biological networks},
+  E. Dimitrova, L. Garc\'ia-Puente, {\bf F. Hinkelmann}, A. Jarrah, R. Laubenbacher, B. Stigler,
+  M. Stillman, P. Vera-Licona, Journal of Theoretical Computer Science, April
+  2010, \href{http://dx.doi.org/10.1016/j.tcs.2010.04.034}{DOI: 10.1016/j.tcs.2010.04.034}\\
+
+  \textit{Boolean Models of Bistable
+  Biological Systems}, {\bf F. Hinkelmann}, R.
+  Laubenbacher, Journal of Discrete and Continuous Dynamical
+  Systems - Series S (DCDS-S) 4-6 December 2011 special issue on Biomathematics, \href{http://dx.doi.org/10.3934/dcdss.2011.4.1443}{DOI: 10.3934/dcdss.2011.4.1443}\\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Book Chapters}
+  \textit{Algebraic models and their use in systems biology}, 
+      R. Laubenbacher, {\bf F. Hinkelmann}, D. Murrugarra, A. Veliz-Cuba, Discrete and Topological Models in Molecular Biology, edited by Natasa Jonoska and Masahico Saito, Springer, ISBN: 9783642401923, 2013\\
+      
+  	\textit{Agent-based models and optimal control in biology: an algebraic	approach}, {\bf F. Hinkelmann}, M. Oremland, R. Laubenbacher, Mathematical Concepts and Methods in Modern Biology, Edited by Raina Robeva and Terrell Hodge, Elsevier, ISBN: 9780124157804, 2013\\
+  	
+  	\textit{Finite Fields in Biology}, {\bf F. Hinkelmann}, R. Laubenbacher, Handbook on Finite Fields, edited by Gary Mullen and Daniel Panario, CRC Press, ISBN: 9781439873786, 2013\\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Research Grants}
+  %
+  Collaborator on \href{http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1146819&WT.z_pims_id=5444}{NSF Award \#1146819} \textit{Collaborative Research: ABI Innovation: PlantSimLab: A Simulation Laboratory for Plant Biology}, awarded amount \$881,510, 2012\\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Invited Talks}
+  %
+  \textbf{.concat(), the web development conference in Austria}, \textit{Mobile Web Apps with Native App Features}, March 7, 2015, Salzburg, Austria\\
+
+  \textbf{PHPBenelux Conference}, Workshop \textit{From nightmare legacy code to a professional PHP application in 3 hours}, January 23, 2015, Antwerp, Belgium\\
+
+  \textbf{The National Alliance for Doctoral Studies in the Mathematical Sciences}, Field of Dreams Conference, November 2, 2012, Tempe, AZ\\
+
+  \textbf{MBI (Mathematical Biosciences Institute)}, Plenary Talk, Workshop: Algebraic Methods in Evolutionary and Systems Biology, May 2012, Columbus, OH \\
+
+  \textbf{Colorado State University}, Applied Mathematics Seminar, April 4, 2012, Fort Collins, CO\\
+
+  \textbf{Virginia Tech, Department of Mathematics}, Colloquium, \textit{Algebraic theory for discrete models in systems biology}, March 16, 2012, Blacksburg, VA \\
+
+  \textbf{AWM (Association for Women in Mathematics) Workshop} in conjunction with the Joint Mathematics Meeting, January 7, 2012, Boston, MA\\
+
+  \textbf{SACNAS} (Society for Advancing Hispanics/Chicanos and Native Americans
+  in Science),  Discrete Systems Biology: Unlocking Nature's Secrets One Step at a Time, October, 2011, San Jose, CA\\
+
+  \textbf{Georgia Tech}, Mathematical Biology Seminar, September 21, 2011, Atlanta, GA\\
+
+  \textbf{Clemson University}, Algebraic Geometry Seminar, \textit{Parameter
+  Estimation for ``biologically relevant" polynomial dynamical systems}, March
+  17, 2011, SC\\
+
+  \textbf{Duke University}, Algebraic Geometry Seminar, \textit{Analysis of Discrete Models of Biological Systems Using Computer Algebra}, January 26, 2011, Durham, NC \\
+
+  \textbf{North Carolina State University}, Symbolic Computation Seminar, \textit{Analysis of Discrete Models of Biological Systems Using Computer Algebra}, 
+  December 1, 2010, Raleigh, NC \\
+
+  \textbf{Karlsruhe Institute of Technology}, Seminar Institut f\"ur Wissenschaftliches Rechnen und Mathematischer Modellbildung), \textit{Algebraic
+  Varieties in Systems Biology}, November 5, 2010, %Karlsruhe, 
+  Germany
+  \\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
+
+  %-----------------------------------
+  \section{Workshops Organized}
+  %
+  \textbf{MBI (Mathematical Biosciences Institute)} Workshop for Young Researchers 
+  in Mathematical Biology (WYRMB), organized jointly with R. Leander, September 2012, Columbus, OH\\
 
-\begin{tabular*}{\textwidth}{c}
-\hline 
-\end{tabular*}
+  \textbf{Wake Forest University, School of Medicine}
+  Workshop together with R. Laubenbacher, 
+  \textit{\href{http://admg.vbi.vt.edu/home/Outreach/Workshops/cancer-systems-biology/Worksheet.pdf?attredirects=0&d=1}{Mathematical Modeling in Cancer Biology}}, March 25, 2011,
+  Winston-Salem, NC  \\
 
-%
-%-----------------------------------
-\section{Mentoring}
-%
-\textbf{Team Investigation}, May 2013, Columbus, OH\\
-  Led a team of five undergraduate students over the course of two weeks, investigating a publication in 
-  mathematical biology\\
-  
-\textbf{Mentor} {\bf Research Experiences for Undergraduates (REU)},
-  \href{http://biomath.vbi.vt.edu/}{\textit{Modeling and Simulation in Systems
-  Biology (MSSB)}}, Summer 2012, Blacksburg, VA\\
-  Chris Miles, Emily Petty, {\it Sensitivity Analysis for Polynomial Dynamical Systems}\\
+  \textbf{Math Institutes Modern Math Workshop} Mini-course together with 
+  R. Laubenbacher, 
+  \textit{\href{http://admg.vbi.vt.edu/programs-conferences/mathematics-and-the-systems-biology-of-cancer-course-material/SystemsBiology.pdf?attredirects=0&d=1}{Mathematics
+  and the Systems Biology of Cancer}}, September 29-30, 2010,
+  Anaheim, CA \\
 
-\textbf{Mentor at Young Mathematicians Conference}, Ohio State University, August 19 - 21, 2011, Columbus, OH\\
-	
-\textbf{Mentor REU},
-  \href{http://biomath.vbi.vt.edu/}{\textit{MSSB}}, Summer 2011, Blacksburg, VA
-	\begin{itemize}
-	    \item Led a group of four undergraduates during a ten week project on {\it Optimal Control for Polynomial Dynamical Systems} and {\it Translating complex Agent Based Models into Polynomial Dynamical Systems}
-		\item Played large role in conceptual design of the project
-		\item Student presented at {\it Young Mathematicians Conference} at Ohio State University, August, 2011, Columbus, OH
-		\item Outstanding Presentation award winner at the 2012 Joint Mathematics Meetings MAA
-		Undergraduate Poster Session, {\it Heuristic Optimal Control on
-		Polynomial Dynamical Systems Expedited by Use of Algebraic Geometry} \\
-	  \end{itemize}
-	
- \textbf{Mentor} for Undergraduate Research, \textit{Mathematical Modeling
-  for Biologists, Knockout and Knockdown}, Spring 2011, Blacksburg, VA \\
 
-\textbf{Mentor} for Undergraduate Research, \textit{Database for Discrete Models of Biological Models}, Fall 2010, Blacksburg, VA\\
+  \begin{tabular*}{\textwidth}{c}
+  \hline 
+  \end{tabular*}
 
+  %
+  %-----------------------------------
+  \section{Mentoring}
+  %
+  \textbf{Team Investigation}, May 2013, Columbus, OH\\
+    Led a team of five undergraduate students over the course of two weeks, investigating a publication in 
+    mathematical biology\\
+    
+  \textbf{Mentor} {\bf Research Experiences for Undergraduates (REU)},
+    \href{http://biomath.vbi.vt.edu/}{\textit{Modeling and Simulation in Systems
+    Biology (MSSB)}}, Summer 2012, Blacksburg, VA\\
+    Chris Miles, Emily Petty, {\it Sensitivity Analysis for Polynomial Dynamical Systems}\\
 
-	\textbf{Mentor} {\bf REU}, \href{http://biomath.vbi.vt.edu/}{\textit{Modeling and Simulation in Systems Biology (MSSB)}}, Summer 2010, Blacksburg, VA
-  \begin{itemize}
+  \textbf{Mentor at Young Mathematicians Conference}, Ohio State University, August 19 - 21, 2011, Columbus, OH\\
+  	
+  \textbf{Mentor REU},
+    \href{http://biomath.vbi.vt.edu/}{\textit{MSSB}}, Summer 2011, Blacksburg, VA
+  	\begin{itemize}
+  	    \item Led a group of four undergraduates during a ten week project on {\it Optimal Control for Polynomial Dynamical Systems} and {\it Translating complex Agent Based Models into Polynomial Dynamical Systems}
+  		\item Played large role in conceptual design of the project
+  		\item Student presented at {\it Young Mathematicians Conference} at Ohio State University, August, 2011, Columbus, OH
+  		\item Outstanding Presentation award winner at the 2012 Joint Mathematics Meetings MAA
+  		Undergraduate Poster Session, {\it Heuristic Optimal Control on
+  		Polynomial Dynamical Systems Expedited by Use of Algebraic Geometry} \\
+  	  \end{itemize}
+  	
+   \textbf{Mentor} for Undergraduate Research, \textit{Mathematical Modeling
+    for Biologists, Knockout and Knockdown}, Spring 2011, Blacksburg, VA \\
 
-    \item Resulted in publication: \textit{ADAM: Analysis of Discrete Models of Biological Systems Using Computer
-	Algebra}, {\bf F. Hinkelmann}, M. Brandon, B. Guang, R. McNeill,
-	G. Blekherman, A. Veliz-Cuba, R. Laubenbacher, BMC Bioinformatics, 2011, \href{http://dx.doi.org/10.1186/1471-2105-12-295}{DOI: 10.1186/1471-2105-12-295}
-	%\item Students presented at {\it MAA Undergraduate Poster Session}, Joint Mathematics Meetings, New Orleans, LA, January 8, 2011\\ 
-  \end{itemize}
+  \textbf{Mentor} for Undergraduate Research, \textit{Database for Discrete Models of Biological Models}, Fall 2010, Blacksburg, VA\\
 
-	\textbf{Mentor} for {\bf Initiative for Maximizing Student Development (IMSD)} Undergraduate Research, 
-	\textit{Network Modeling}, Spring and Summer 2009, Blacksburg, VA \\
 
+  	\textbf{Mentor} {\bf REU}, \href{http://biomath.vbi.vt.edu/}{\textit{Modeling and Simulation in Systems Biology (MSSB)}}, Summer 2010, Blacksburg, VA
+    \begin{itemize}
 
-	\textbf{Mentor} for Undergraduate Research, 
-	\textit{Network Modeling}, Fall 2008, Blacksburg, VA
-%	\begin{itemize}
-%		\item Mentored an individual student in her undergraduate research\\
-		%\item Defined the project and set research goals 
-		%\item Weekly meetings. 
-		%\item Final report
-%	\end{itemize}
+      \item Resulted in publication: \textit{ADAM: Analysis of Discrete Models of Biological Systems Using Computer
+  	Algebra}, {\bf F. Hinkelmann}, M. Brandon, B. Guang, R. McNeill,
+  	G. Blekherman, A. Veliz-Cuba, R. Laubenbacher, BMC Bioinformatics, 2011, \href{http://dx.doi.org/10.1186/1471-2105-12-295}{DOI: 10.1186/1471-2105-12-295}
+  	%\item Students presented at {\it MAA Undergraduate Poster Session}, Joint Mathematics Meetings, New Orleans, LA, January 8, 2011\\ 
+    \end{itemize}
 
+  	\textbf{Mentor} for {\bf Initiative for Maximizing Student Development (IMSD)} Undergraduate Research, 
+  	\textit{Network Modeling}, Spring and Summer 2009, Blacksburg, VA \\
 
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
 
+  	\textbf{Mentor} for Undergraduate Research, 
+  	\textit{Network Modeling}, Fall 2008, Blacksburg, VA
+  %	\begin{itemize}
+  %		\item Mentored an individual student in her undergraduate research\\
+  		%\item Defined the project and set research goals 
+  		%\item Weekly meetings. 
+  		%\item Final report
+  %	\end{itemize}
 
-%-----------------------------------
-\section{Presentations Posters Panels}
-%
-\textbf{Plant Immunity: Pathways and Translation}, Keystone Symposium, {\it 
-PlantSimLab Software Demonstration}, April 9th, 2013, Big Sky, MT\\
 
-\textbf{Plant Immunity: Pathways and Translation}, Keystone Symposium, Poster {\it PlantSimLab: a simulations laboratory for plant biology}, April 9th, 2013, Big Sky, MT\\
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
 
-\textbf{MBI (Mathematical Biosciences Institute)}, Postdoctoral seminar, November 8th, 2012, Columbus, OH\\
 
-\textbf{Society for Mathematical Biology}, Annual Meeting, Session for {\it Agent-based Models of Biological Systems: Approximation and Control}, {\it Algebraic Framework for Agent-based models}, July 26th, 2012, Knoxville, TN\\
+  %-----------------------------------
+  \section{Presentations Posters Panels}
+  %
+  \textbf{TNG Winter Retreat} Workshop \textit{Stack machines with PHP}, March 13, 2015, Seefeld, Austria\\
 
-\textbf{Ohio State University}, RUMBA Undergraduate Seminar in Mathematical Biology, {\it Inhibiting tumor growth of melanoma cells}, April 3rd, 2012, Columbus, OH\\
+  \textbf{TNG Techday} Workshop \textit{Spa{\ss} mit Node.js}, February 13, 2015, Unterf\"ohring, Germany\\
 
-\textbf{MBI}, Institute Partner Meeting, Poster {\it Using Systems Biology Approach to Identify Potential Targets for Therapy in Melanoma cells}, February 12th, 2012, Columbus, OH\\
+  \textbf{Plant Immunity: Pathways and Translation}, Keystone Symposium, {\it 
+  PlantSimLab Software Demonstration}, April 9, 2013, Big Sky, MT\\
 
-\textbf{NIMBioS (National Institute for Mathematical and Biological Synthesis)}, {\it Optimal Control on Polynomial Dynamical Systems Expedited by Use of Algebraic Geometry}, Working Group Agent-Based Models of Biological Systems, December 13th, 2011, Knoxville, TN\\
+  \textbf{Plant Immunity: Pathways and Translation}, Keystone Symposium, Poster {\it PlantSimLab: a simulations laboratory for plant biology}, April 9, 2013, Big Sky, MT\\
 
-\textbf{Ohio Wesleyan University}, Science Lecture Series, {\it Discrete Models in Systems Biology}, November 3rd, 2011, Delaware, OH\\
+  \textbf{MBI (Mathematical Biosciences Institute)}, Postdoctoral seminar, November 8, 2012, Columbus, OH\\
 
-\textbf{Ohio Wesleyan University}, Mathematics Colloquium, {\it Algebraic theory for discrete models in systems biology}, November 3rd, 2011, Delaware, OH\\
+  \textbf{Society for Mathematical Biology}, Annual Meeting, Session for {\it Agent-based Models of Biological Systems: Approximation and Control}, {\it Algebraic Framework for Agent-based models}, July 26, 2012, Knoxville, TN\\
 
-\textbf{Center for Mathematical Medicine at Nationwide Children's Hospital}, Seminar, September 29th, 2011, Columbus, OH\\
+  \textbf{Ohio State University}, RUMBA Undergraduate Seminar in Mathematical Biology, {\it Inhibiting tumor growth of melanoma cells}, April 3, 2012, Columbus, OH\\
 
-\textbf{MBI}, Postdoctoral Seminar, {\it Algebraic theory for discrete models in systems biology}, September 8th, 2011, Columbus, OH\\
+  \textbf{MBI}, Institute Partner Meeting, Poster {\it Using Systems Biology Approach to Identify Potential Targets for Therapy in Melanoma cells}, February 12, 2012, Columbus, OH\\
 
-\textbf{Young Mathematicians Conference}, Ohio State University, {\it Panel: Graduate School Orientation Session}, August 21th, 2011, Columbus, OH\\
+  \textbf{NIMBioS (National Institute for Mathematical and Biological Synthesis)}, {\it Optimal Control on Polynomial Dynamical Systems Expedited by Use of Algebraic Geometry}, Working Group Agent-Based Models of Biological Systems, December 13, 2011, Knoxville, TN\\
 
-\textbf{Virginia Bioinformatics Institute, PhD defense}
-\textit{Algebraic theory for discrete models in systems biology}, August 1st, 2011, Blacksburg, VA\\
+  \textbf{Ohio Wesleyan University}, Science Lecture Series, {\it Discrete Models in Systems Biology}, November 3, 2011, Delaware, OH\\
 
-\textbf{Virginia Tech Department of Mathematics, Graduate Seminar}
-\textit{Writing a good CV, research statement, and teaching statement}, April
-7th, 2011, Blacksburg, VA\\
+  \textbf{Ohio Wesleyan University}, Mathematics Colloquium, {\it Algebraic theory for discrete models in systems biology}, November 3, 2011, Delaware, OH\\
 
-\textbf{Virginia Tech Department Graduate Student Assembly, Research
-Symposium}
-\textit{Algebraic Framework for Discrete Models in Systems Biology}, March
-23rd, 2011, Blacksburg, VA\\
+  \textbf{Center for Mathematical Medicine at Nationwide Children's Hospital}, Seminar, September 29, 2011, Columbus, OH\\
 
-\textbf{Virginia Tech Department of Mathematics, Visitors' Day}
-\textit{Polynomial Dynamical Systems in Cancer Biology}, March 18th, 2011,
-Blacksburg, VA\\
+  \textbf{MBI}, Postdoctoral Seminar, {\it Algebraic theory for discrete models in systems biology}, September 8, 2011, Columbus, OH\\
 
-\textbf{Universit\"at G\"ottingen, Macaulay2 Workshop} \textit{Parameter
-Estimation for ``Biologically Relevant'' Polynomial Dynamical Systems}, March
-3, 2011, G\"ottingen, Germany\\
+  \textbf{Young Mathematicians Conference}, Ohio State University, {\it Panel: Graduate School Orientation Session}, August 21, 2011, Columbus, OH\\
 
-\textbf{Virginia Tech Department of Mathematics, Research Days}
-\textit{Mathematics of Systems Biology}, October 29th, 2010 \\
+  \textbf{Virginia Bioinformatics Institute, PhD defense}
+  \textit{Algebraic theory for discrete models in systems biology}, August 1, 2011, Blacksburg, VA\\
 
-\textbf{Virginia Tech Student Chapter of SIAM, Student Research Seminars}
-\textit{Algebraic Varieties in Systems Biology}, October 20th, 2010 \\
+  \textbf{Virginia Tech Department of Mathematics, Graduate Seminar}
+  \textit{Writing a good CV, research statement, and teaching statement}, April
+  7, 2011, Blacksburg, VA\\
 
-\textbf{MBI} (Mathematical Biosciences Institute), Workshop for Young Researchers 
-in Mathematical Biology (WYRMB), Poster \textit{ADAM: Analysis of Discrete
-Models of Biological Systems Using Computer Algebra}, August 30-September 1,
-2010, Columbus, OH\\
+  \textbf{Virginia Tech Department Graduate Student Assembly, Research
+  Symposium}
+  \textit{Algebraic Framework for Discrete Models in Systems Biology}, March
+  23, 2011, Blacksburg, VA\\
 
-\textbf{SIAM} (Society for Industrial and Applied Mathematics)
-Southeastern-Atlantic Section Conference \textit{Mathematical Framework for
-Agent Based Models and Optimal Control}, Mathematical Modeling in Life
-Sciences: Control and Optimization, Part 2, March 2010, Raleigh, NC\\
+  \textbf{Virginia Tech Department of Mathematics, Visitors' Day}
+  \textit{Polynomial Dynamical Systems in Cancer Biology}, March 18, 2011,
+  Blacksburg, VA\\
 
-\textbf{AMS} (American Mathematical Society) \textbf{Joint Mathematics Meeting} 
-Panel Discussion \textit{Finding a Research Topic and Thesis Advisor}, MAA Committee on Graduate
-Students and the Young Mathematicians' Network, January, 2010, San Francisco,
-CA\\
+  \textbf{Universit\"at G\"ottingen, Macaulay2 Workshop} \textit{Parameter
+  Estimation for ``Biologically Relevant'' Polynomial Dynamical Systems}, March
+  3, 2011, G\"ottingen, Germany\\
 
-\textbf{SAMSI} (Statistical and Applied Mathematical Sciences Institute) 
-Working Group \textit{Random Delay Networks}, February
-4, 2009\\
+  \textbf{Virginia Tech Department of Mathematics, Research Days}
+  \textit{Mathematics of Systems Biology}, October 29, 2010, Blacksburg, VA \\
 
-\textbf{AMS Joint Mathematics Meeting} \textit{A General Method to derive
-a Boolean Model from a Continuous Model for Gene Regulatory Networks}, January
-6, 2009, Washington DC\\
+  \textbf{Virginia Tech Student Chapter of SIAM, Student Research Seminars}
+  \textit{Algebraic Varieties in Systems Biology}, October 20, 2010, Blacksburg, VA \\
 
-\textbf{Virginia Tech Physics Department, Graduate Student Seminar}
-\textit{Gene Regulation in the Lac Operon}, September 12, 2008\\
+  \textbf{MBI} (Mathematical Biosciences Institute), Workshop for Young Researchers 
+  in Mathematical Biology (WYRMB), Poster \textit{ADAM: Analysis of Discrete
+  Models of Biological Systems Using Computer Algebra}, August 30-September 1,
+  2010, Columbus, OH\\
 
-\textbf{Virginia Tech Student Chapter of SIAM, Student Research Seminars}
-\textit{General Method
-to Transition from a Continuous Model to a Discrete Network}, September 3,
-2008\\
+  \textbf{SIAM} (Society for Industrial and Applied Mathematics)
+  Southeastern-Atlantic Section Conference \textit{Mathematical Framework for
+  Agent Based Models and Optimal Control}, Mathematical Modeling in Life
+  Sciences: Control and Optimization, Part 2, March 2010, Raleigh, NC\\
 
-\textbf{SIAM Annual Meeting} \textit{Understanding Dynamics of
-Gene Regulation Using a Discrete Model}, July 7-11, 2008\\
+  \textbf{AMS} (American Mathematical Society) \textbf{Joint Mathematics Meeting} 
+  Panel Discussion \textit{Finding a Research Topic and Thesis Advisor}, MAA Committee on Graduate
+  Students and the Young Mathematicians' Network, January, 2010, San Francisco,
+  CA\\
 
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
+  \textbf{SAMSI} (Statistical and Applied Mathematical Sciences Institute) 
+  Working Group \textit{Random Delay Networks}, February
+  4, 2009, Research Triangle Park, NC\\
 
-%-----------------------------------
-\section{Honors}
-\textbf{AWM Travel Award} AWM Workshop in conjunction with the Joint Mathematics Meeting, January 4-7, 2012, Boston, MA\\
+  \textbf{AMS Joint Mathematics Meeting} \textit{A General Method to derive
+  a Boolean Model from a Continuous Model for Gene Regulatory Networks}, January
+  6, 2009, Washington, DC\\
 
-\textbf{MBI Postdoctoral Fellow} 2011-2014\\
+  \textbf{Virginia Tech Physics Department, Graduate Student Seminar}
+  \textit{Gene Regulation in the Lac Operon}, September 12, 2008, Blacksburg, VA\\
 
-\textbf{Steeneck Fellowship} 2010-2011\\
+  \textbf{Virginia Tech Student Chapter of SIAM, Student Research Seminars}
+  \textit{General Method
+  to Transition from a Continuous Model to a Discrete Network}, September 3,
+  2008, Blacksburg, VA\\
 
-\textbf{AMS Travel Award} Joint
-  Mathematics Meeting, January 13-16, 2010, San Francisco, California \\
+  \textbf{SIAM Annual Meeting} \textit{Understanding Dynamics of
+  Gene Regulation Using a Discrete Model}, July 7-11, 2008, San Diego, CA\\
 
-\textbf{SACNAS Travel Scholarship} (Advancing Hispanics/Chicanos and Native Americans
-in Science), Improving the Human Condition: Challenges for Interdisciplinary
-Science, October 15-18, 2009, Dallas, Texas \\
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
 
-\textbf{SIAM Travel Award} SIAM Annual Meeting, July 6-10, 2009, Denver, Colorado \\
+  %-----------------------------------
+  \section{Honors}
+  \textbf{AWM Travel Award} AWM Workshop in conjunction with the Joint Mathematics Meeting, January 4-7, 2012, Boston, MA\\
 
-\textbf{SIAM Student Chapter Certificate of Recognition} 2009, faculty advisor Lizette Zietsman \\
+  \textbf{MBI Postdoctoral Fellow} 2011-2014\\
 
-\textbf{SIAM Student Travel Award} SIAM Annual Meeting, July
-7-11, 2008, San Diego, California \\
+  \textbf{Steeneck Fellowship} 2010-2011\\
 
-\textbf{Hatcher Fellowship} Summer 2008 \\
+  \textbf{AMS Travel Award} Joint
+    Mathematics Meeting, January 13-16, 2010, San Francisco, California \\
 
-\textbf{Baden-W\"urttemberg Stipendium} Scholarship 2006-2007 \\
-%\textbf{Travel Support}
-%\begin{outerlist}
-%  \item[] \textbf{NIMBioS} Optimal Control and Optimization for
-%  Individual-based and Agent-based Models, December 1-3, 2009, Knoxville,
-%  Tennessee
-
-%  \item[] \textbf{DIMACS} (Center for Discrete Mathematics and Theoretical
-%  Computer Science) Polynome working group, June 27-30, 2009, Rutgers, New Jersey
-%	\item[] \textbf{SAMSI} 
-%	Software Workshop Polynome working group, February 24-26, 2009
-%	\item[] \textbf{AMS Joint Mathematics Meeting}, January 5-8, 2009
-%	\item[] \textbf{SAMSI} Discrete Models in Systems Biology Workshop, December 3-5, 2008
-%	\item[] \textbf{SAMSI} Opening Workshop Program on Algebraic
-%	Methods in Systems Biology and Statistics, September 14-17,
-%	2008
-%	\item[] \textbf{IMA} (Institute for Mathematics and Its Applications)
-%	Workshop Design Principles in Biological
-%	Systems, April 21-25, 2008, Minneapolis, Minnesota
-%	\item[] \textbf{IMA} 
-%	Tutorial Network Dynamics and Cell Physiology, April 17-18, 2008
-%	\item[] \textbf{IMA} 
-%	Workshop Organization of Biological
-%	Networks, March 3-7, 2008\\
-%\end{outerlist}
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-
-%-----------------------------------
-
-\section{Selected Workshops}
-\textbf{Macaulay2 Workshop}, January 6 - 10, 2014, Berkeley, California \\
-  
-Working Group \textbf{Agent-Based Models of Biological Systems: Pathways to control and optimization}, NIMBioS (National Institute for Mathematical and Biological Synthesis), November 27-29, 2012, Knoxville, TN\\
-
-MBI BioSciences Problem-Solving Workshop, \textbf{Mathematical model of blood calcium ion regulation}, July 16-20, 2012, Columbus, OH\\
-
-Working Group \textbf{Agent-Based Models of Biological Systems: Pathways to control and optimization}, NIMBioS (National Institute for Mathematical and Biological Synthesis), December 13-15, 2011, Knoxville, TN\\
-
-\textbf{Macaulay2 Workshop}, Institute for Mathematics and Its Applications, July 25-29, 2011, Minneapolis, MN\\
-
-\textbf{Macaulay2 Workshop}, Courant Center for Higher Order Structures, February 28 - March 5, 2011, G\"ottingen, Germany \\
-
-\textbf{AIM} (American Institute of Mathematics) \textbf{Parameter
-identification in graphical models}, October 4-8, 2010, Paolo Alto,
-California \\
-
-\textbf{MBI} \textbf{Bootcamp in Cancer Modeling}, September 7-10, 2010,
-Columbus, Ohio\\
-	
-
-\textbf{Macaulay2 Workshop}, August 7-13, 2010, Colorado Springs, Colorado\\
-
-\textbf{Macaulay2
-  Workshop}, January 7 - 13, 2010, Berkeley, California \\
-
-\textbf{MSRI} \textbf{Graduate
-Workshop} Toric Varieties, June 15-26, 2009, Berkeley, California \\
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-
-%-----------------------------------
-
-\section{Association Memberships}
-%\textbf{Society for Industrial and Applied Mathematics (SIAM)}, member since 2008\\
-%
-%\blankline
-%
-\textbf{SIAM Student Chapter at Virginia Tech}
-\begin{outerlist}
-\item[] 
-	\textbf{President}, 2008 - 2009\\
-	Organized Student Research Seminar, visiting speakers
-	program, field trip to Joint Mathematics Conference,
-	Minisymposia, website maintenance\\
-\end{outerlist}
-
-%\blankline
-%
-%%\textbf{Memberships}
-%\textbf{Pi Mu Epsilon}
-%\begin{outerlist}
-%\item[] 
-%	Mathematics Honorary Member, since 2007\\
-%\end{outerlist}
-%
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-%\newpage
-%-----------------------------------
-
-\section{Teaching Experience}
-%
-\textbf{Virginia Tech}
-\begin{outerlist}
-\item[] 
-	\textbf{Course Instructor} - Integral Calculus, Summer 2009 
-	\begin{itemize}
-		 \item Lectured five times a week for a class of 32 undergraduate students
-		 \item Created syllabus
-         \item Wrote and graded course exams
-		 \item Assigned grades to students
-	\end{itemize}
-\item[] 
-	\textbf{Course Instructor} - Computer-tested Integral
-	Calculus, Spring 2009 
-%	\begin{itemize}
-%		 \item Lectured three times a week for a class of 80 undergraduate students
-%		 \item Held office hours twice a week
-%		 \item Assigned grades to students
-%	\end{itemize}
-\item[] 
-	\textbf{Course Instructor} - Differential Calculus, Fall
-	2007 - Fall 2008
-%	\begin{itemize}
-%		\item Lectured two or three times a week for a class of 40 undergraduate students 
-%		\item Created quizzes and worksheets
-%		\item Graded homework and \textit{Mathematica} worksheets 
-%		\item Held office hours three times a week
-%		\item Wrote and contributed to the creation of course exams
-%		\item Held review sessions for exams
-%		\item Graded exams
-%		\item Assigned grades to students 
-%	\end{itemize}
-\item[]
-	\textbf{Instructional Assistant}, Fall 2006 
-	\begin{itemize}
-		\item Assisted students with math concepts and software questions 
-	\end{itemize}
-%	for a variety of courses and software such as differential calculus, integral 
-%	calculus, elementary linear algebra, business calculus, Microsoft Excel, 
-%	MATLAB, and Mathematica.
-\end{outerlist}
-
-\blankline
-
-\textbf{Universit\"at Karlsruhe}
-\begin{outerlist}
-\item[] 
-	\textbf{Numerical Analysis Programming Lab Instructor},
-	Spring 2006
-	\begin{itemize}
-		\item Instructed students once a week and graded C++ and Java exercises
-	\end{itemize}
-\item[] 
-	\textbf{Linear Algebra and Real Analysis Recitations}, Spring 2005 - Spring 2006
-	\begin{itemize}
-		\item Lectured once a week for a class of 70 undergraduate students
-		\item Graded homework and exams
-	\end{itemize}
-\end{outerlist}
-
-\blankline
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-
-		
-\section{Other Work Experience}
-\textbf{EnBW Trading GmbH}, Karlsruhe, Germany, Summer 2007
-\begin{outerlist}
-\item[] 
-	\textbf{Internship Methods and Models at EnBW Trading GmbH}
-	\begin{itemize}
-		\item Research on energy consumption and production in Europe.	
-	\end{itemize}
-\end{outerlist}
-
-\blankline
-
-\textbf{United Internet AG}, Karlsruhe, Germany, 2001 - 2006
-\begin{outerlist}
-\item[] 
-	\textbf{Unix System Developer}
-	\begin{itemize}
-		\item Responsible for planning, programming and testing of software,
-		mainly written in C, C++
-		%\item Extensive use of shell scripting and common Unix tools
-		\item Projects included Voice over IP server software and 
-		low level storage software.  
-	\end{itemize}
-\end{outerlist}
-
-\blankline
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-
-% \section{Programming Experience}
-%   Common UNIX scripting languages\\
-% 
-%   Ruby on Rails\\
-%   \textit{
-%   \href{http://polymath.vbi.vt.edu:3000/}{http://polymath.vbi.vt.edu/polynome/}}\\
-%   
-%   C, C++\\
-%   \textit{\href{http://www.math.uiuc.edu/Macaulay2/doc/Macaulay2-1.4/share/doc/Macaulay2/BooleanGB/html/}{BooleanGB -- Compute Gr\"obner Basis in a Boolean
-%   Ring}}\\
-%   
-%   Test Driven Development, Unit testing\\
-% 
-%   Computational Algebra Systems (Macaulay2, Singular)\\
-%   \textit{\href{http://www.math.vt.edu/people/fhinkel/ncf.lib}{Inferring
-%   Biologically Relevant Models: Nested Canalyzing Functions}}\\
-%   
-%   Unix Server Administration, for \textit{Applied Discrete
-%   Mathematics Group} at Virginia Bioinformatics Institute \\
-% 
-%   Common web development tools, HTML, JavaScript, jQuery, Perl, Ruby\\
-%   \textit{ADAM, Analysis of Dynamic Algebraic Models}\\
-%   \textit{TryM2!
-%   An interactive website to try Macaulay2. In progress}\\
-% 
-%   NetLogo, a multi-agent programmable modeling environment for agent-based
-%   models
-% 
-% \blankline
-% 
-% \begin{tabular*}{\textwidth}{c}
-% \hline
-% \end{tabular*}
-\section{Languages}
-\noindent
-Fluent: German (Native), English, Italian\\
-Basic: French, Spanish\\
-
-\begin{tabular*}{\textwidth}{c}
-\hline
-\end{tabular*}
-		
-\section{References}
-\noindent Reinhard Laubenbacher, \href{mailto:reinhard@vbi.vt.edu}{reinhard@vbi.vt.edu}, Virginia Tech, Virginia Bioinformatics Institute,\\ \noindent PhD advisor\\
-
-Mike Stillman, \href{mailto:mike@math.cornell.edu}{mike@math.cornell.edu}, Cornell University, Department of Mathematics\\
-%
-%Bernd Sturmfels, \href{mailt:bernd@math.berkeley.edu}{bernd@math.berkeley.edu}, UC Berkeley, Department of Mathematics\\
-%
-%Eileen Shugart, \href{mailto:shugart@vt.edu}{shugart@vt.edu}, Virginia Tech, Department of Mathematics, concerns Teaching\\
-
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \textbf{SACNAS Travel Scholarship} (Advancing Hispanics/Chicanos and Native Americans
+  in Science), Improving the Human Condition: Challenges for Interdisciplinary
+  Science, October 15-18, 2009, Dallas, Texas \\
+
+  \textbf{SIAM Travel Award} SIAM Annual Meeting, July 6-10, 2009, Denver, Colorado \\
+
+  \textbf{SIAM Student Chapter Certificate of Recognition} 2009, faculty advisor Lizette Zietsman \\
+
+  \textbf{SIAM Student Travel Award} SIAM Annual Meeting, July
+  7-11, 2008, San Diego, California \\
+
+  \textbf{Hatcher Fellowship} Summer 2008 \\
+
+  \textbf{Baden-W\"urttemberg Stipendium} Scholarship 2006-2007 \\
+  %\textbf{Travel Support}
+  %\begin{outerlist}
+  %  \item[] \textbf{NIMBioS} Optimal Control and Optimization for
+  %  Individual-based and Agent-based Models, December 1-3, 2009, Knoxville,
+  %  Tennessee
+
+  %  \item[] \textbf{DIMACS} (Center for Discrete Mathematics and Theoretical
+  %  Computer Science) Polynome working group, June 27-30, 2009, Rutgers, New Jersey
+  %	\item[] \textbf{SAMSI} 
+  %	Software Workshop Polynome working group, February 24-26, 2009
+  %	\item[] \textbf{AMS Joint Mathematics Meeting}, January 5-8, 2009
+  %	\item[] \textbf{SAMSI} Discrete Models in Systems Biology Workshop, December 3-5, 2008
+  %	\item[] \textbf{SAMSI} Opening Workshop Program on Algebraic
+  %	Methods in Systems Biology and Statistics, September 14-17,
+  %	2008
+  %	\item[] \textbf{IMA} (Institute for Mathematics and Its Applications)
+  %	Workshop Design Principles in Biological
+  %	Systems, April 21-25, 2008, Minneapolis, Minnesota
+  %	\item[] \textbf{IMA} 
+  %	Tutorial Network Dynamics and Cell Physiology, April 17-18, 2008
+  %	\item[] \textbf{IMA} 
+  %	Workshop Organization of Biological
+  %	Networks, March 3-7, 2008\\
+  %\end{outerlist}
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+
+  %-----------------------------------
+
+  \section{Selected Workshops}
+  %
+  \textbf{Kanban Training}, January 24, 2014, Unterf\"ohring, Germany\\
+
+  \textbf{Macaulay2 Workshop}, January 6 - 10, 2014, Berkeley, California \\
+
+  \textbf{SQL Workshop}, December 13, 2013, Unterf\"ohring, Germany\\
+
+  Working Group \textbf{Agent-Based Models of Biological Systems: Pathways to control and optimization}, NIMBioS (National Institute for Mathematical and Biological Synthesis), November 27-29, 2012, Knoxville, TN\\
+
+  MBI BioSciences Problem-Solving Workshop, \textbf{Mathematical model of blood calcium ion regulation}, July 16-20, 2012, Columbus, OH\\
+
+  Working Group \textbf{Agent-Based Models of Biological Systems: Pathways to control and optimization}, NIMBioS (National Institute for Mathematical and Biological Synthesis), December 13-15, 2011, Knoxville, TN\\
+
+  \textbf{Macaulay2 Workshop}, Institute for Mathematics and Its Applications, July 25-29, 2011, Minneapolis, MN\\
+
+  \textbf{Macaulay2 Workshop}, Courant Center for Higher Order Structures, February 28 - March 5, 2011, G\"ottingen, Germany \\
+
+  \textbf{AIM} (American Institute of Mathematics) \textbf{Parameter
+  identification in graphical models}, October 4-8, 2010, Paolo Alto,
+  California \\
+
+  \textbf{MBI} \textbf{Bootcamp in Cancer Modeling}, September 7-10, 2010,
+  Columbus, Ohio\\
+
+  \textbf{Macaulay2 Workshop}, August 7-13, 2010, Colorado Springs, Colorado\\
+
+  \textbf{Macaulay2
+    Workshop}, January 7 - 13, 2010, Berkeley, California \\
+
+  \textbf{MSRI} \textbf{Graduate
+  Workshop} Toric Varieties, June 15-26, 2009, Berkeley, California \\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+
+  %-----------------------------------
+
+  \section{Association Memberships}
+  %\textbf{Society for Industrial and Applied Mathematics (SIAM)}, member since 2008\\
+  %
+  %\blankline
+  %
+  \textbf{SIAM Student Chapter at Virginia Tech}
+  \begin{outerlist}
+  \item[] 
+  	\textbf{President}, 2008 - 2009\\
+  	Organized Student Research Seminar, visiting speakers
+  	program, field trip to Joint Mathematics Conference,
+  	Minisymposia, website maintenance\\
+  \end{outerlist}
+
+  %\blankline
+  %
+  %%\textbf{Memberships}
+  %\textbf{Pi Mu Epsilon}
+  %\begin{outerlist}
+  %\item[] 
+  %	Mathematics Honorary Member, since 2007\\
+  %\end{outerlist}
+  %
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+  %\newpage
+  %-----------------------------------
+
+  \section{Teaching Experience}
+  %
+  \textbf{Universit\"at Bremen, Bremen, Germany}
+  \begin{outerlist}
+    \item[]
+    {\bf Lecturer}, August 2015\\
+   \href{https://www.informatica-feminale.de/Sommer2015/lib/ajax/course.php?courseId=562}{Agile Software Development: A Node.js application in one week}  \\
+   2 Credit Points (ECTS)\\
+  \end{outerlist}
+
+  \textbf{Fachhochschule Furtwangen, Furtwangen, Germany}
+  \begin{outerlist}
+    \item[]
+    {\bf Lecturer}, Juli 2015\\
+   \href{http://scientifica.de/bildungsangebote/informatica-feminale-bw/informatica-feminale-bw-2015/if-kurse-2015/detailansicht/?tx_seminars_pi1%5BshowUid%5D=58}{Einführung zur testgetriebenen Entwicklung mit PHP}  \\
+  \end{outerlist}
+
+  \textbf{Universit\"at Bremen, Bremen, Germany}
+  \begin{outerlist}
+    \item[]
+    {\bf Lecturer}, August 2014\\
+   \href{https://www.informatica-feminale.de/Archiv/Sommerstudium/Sommer2014/Agil.php#AGI03}{Agile Software Development: A Node.js application in one week}  \\
+      2 Credit Points (ECTS)\\
+
+  \end{outerlist}
+
+  \textbf{Virginia Tech}
+  \begin{outerlist}
+  \item[] 
+  	\textbf{Course Instructor} - Integral Calculus, Summer 2009 
+  	\begin{itemize}
+  		 \item Lectured five times a week for a class of 32 undergraduate students
+  		 \item Created syllabus
+           \item Wrote and graded course exams
+  		 \item Assigned grades to students
+  	\end{itemize}
+  \item[] 
+  	\textbf{Course Instructor} - Computer-tested Integral
+  	Calculus, Spring 2009 
+  %	\begin{itemize}
+  %		 \item Lectured three times a week for a class of 80 undergraduate students
+  %		 \item Held office hours twice a week
+  %		 \item Assigned grades to students
+  %	\end{itemize}
+  \item[] 
+  	\textbf{Course Instructor} - Differential Calculus, Fall
+  	2007 - Fall 2008
+  %	\begin{itemize}
+  %		\item Lectured two or three times a week for a class of 40 undergraduate students 
+  %		\item Created quizzes and worksheets
+  %		\item Graded homework and \textit{Mathematica} worksheets 
+  %		\item Held office hours three times a week
+  %		\item Wrote and contributed to the creation of course exams
+  %		\item Held review sessions for exams
+  %		\item Graded exams
+  %		\item Assigned grades to students 
+  %	\end{itemize}
+  \item[]
+  	\textbf{Instructional Assistant}, Fall 2006 
+  	\begin{itemize}
+  		\item Assisted students with math concepts and software questions 
+  	\end{itemize}
+  %	for a variety of courses and software such as differential calculus, integral 
+  %	calculus, elementary linear algebra, business calculus, Microsoft Excel, 
+  %	MATLAB, and Mathematica.
+  \end{outerlist}
+
+  \blankline
+
+  \textbf{Universit\"at Karlsruhe}
+  \begin{outerlist}
+  \item[] 
+  	\textbf{Numerical Analysis Programming Lab Instructor},
+  	Spring 2006
+  	\begin{itemize}
+  		\item Instructed students once a week and graded C++ and Java exercises
+  	\end{itemize}
+  \item[] 
+  	\textbf{Linear Algebra and Real Analysis Recitations}, Spring 2005 - Spring 2006
+  	\begin{itemize}
+  		\item Lectured once a week for a class of 70 undergraduate students
+  		\item Graded homework and exams
+  	\end{itemize}
+  \end{outerlist}
+
+  \blankline
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+
+  		
+  \section{Other Work Experience}
+  \textbf{EnBW Trading GmbH}, Karlsruhe, Germany, Summer 2007
+  \begin{outerlist}
+  \item[] 
+  	\textbf{Internship Methods and Models at EnBW Trading GmbH}
+  	\begin{itemize}
+  		\item Research on energy consumption and production in Europe.	
+  	\end{itemize}
+  \end{outerlist}
+
+  \blankline
+
+  \textbf{United Internet AG}, Karlsruhe, Germany, 2001 - 2006
+  \begin{outerlist}
+  \item[] 
+  	\textbf{Unix System Developer}
+  	\begin{itemize}
+  		\item Responsible for planning, programming and testing of software,
+  		mainly written in C, C++
+  		%\item Extensive use of shell scripting and common Unix tools
+  		\item Projects included Voice over IP server software and 
+  		low level storage software.  
+  	\end{itemize}
+  \end{outerlist}
+
+  \blankline
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+
+  % \section{Programming Experience}
+  %   Common UNIX scripting languages\\
+  % 
+  %   Ruby on Rails\\
+  %   \textit{
+  %   \href{http://polymath.vbi.vt.edu:3000/}{http://polymath.vbi.vt.edu/polynome/}}\\
+  %   
+  %   C, C++\\
+  %   \textit{\href{http://www.math.uiuc.edu/Macaulay2/doc/Macaulay2-1.4/share/doc/Macaulay2/BooleanGB/html/}{BooleanGB -- Compute Gr\"obner Basis in a Boolean
+  %   Ring}}\\
+  %   
+  %   Test Driven Development, Unit testing\\
+  % 
+  %   Computational Algebra Systems (Macaulay2, Singular)\\
+  %   \textit{\href{http://www.math.vt.edu/people/fhinkel/ncf.lib}{Inferring
+  %   Biologically Relevant Models: Nested Canalyzing Functions}}\\
+  %   
+  %   Unix Server Administration, for \textit{Applied Discrete
+  %   Mathematics Group} at Virginia Bioinformatics Institute \\
+  % 
+  %   Common web development tools, HTML, JavaScript, jQuery, Perl, Ruby\\
+  %   \textit{ADAM, Analysis of Dynamic Algebraic Models}\\
+  %   \textit{TryM2!
+  %   An interactive website to try Macaulay2. In progress}\\
+  % 
+  %   NetLogo, a multi-agent programmable modeling environment for agent-based
+  %   models
+  % 
+  % \blankline
+  % 
+  % \begin{tabular*}{\textwidth}{c}
+  % \hline
+  % \end{tabular*}
+  \section{Languages}
+  \noindent
+  Fluent: German (Native), English, Italian\\
+  Basic: French, Spanish\\
+
+  \begin{tabular*}{\textwidth}{c}
+  \hline
+  \end{tabular*}
+  		
+  \section{References}
+  \noindent Reinhard Laubenbacher, \href{mailto:reinhard@vbi.vt.edu}{reinhard@vbi.vt.edu}, Virginia Tech, Virginia Bioinformatics Institute,\\ \noindent PhD advisor\\
+
+  Mike Stillman, \href{mailto:mike@math.cornell.edu}{mike@math.cornell.edu}, Cornell University, Department of Mathematics\\
+  %
+  %Bernd Sturmfels, \href{mailt:bernd@math.berkeley.edu}{bernd@math.berkeley.edu}, UC Berkeley, Department of Mathematics\\
+  %
+  %Eileen Shugart, \href{mailto:shugart@vt.edu}{shugart@vt.edu}, Virginia Tech, Department of Mathematics, concerns Teaching\\
+
+  \end{document}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
